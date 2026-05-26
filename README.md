@@ -23,12 +23,12 @@
   - 発音形
   - 語種
 
-## 形態論情報ライセンス
+### 形態論情報ライセンス
 - [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-## テキストデータ ファイル形式
+## テキストデータ
 
-## テキストデータライセンス
+### テキストデータライセンス
 - テキストデータのライセンスは原データに従ってください。
   - 仏足石歌（Wikipedia）は[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
   - 歌経標式（ONCOJ）は[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
