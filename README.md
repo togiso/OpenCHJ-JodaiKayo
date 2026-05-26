@@ -25,4 +25,7 @@
 ## 形態論情報ライセンス
 - [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-- テキストデータのライセンスは[青空文庫の記述](https://www.aozora.gr.jp/guide/kijyunn.html)に従ってください。
+- テキストデータのライセンスは出典に従ってください。
+- Wikipediaは[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+- ONCOJは[CC BY 4.0] ([Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
+
