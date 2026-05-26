@@ -1,4 +1,4 @@
-# OpenCHJ-JodaiKayo 形態論情報データ
+# OpenCHJ-上代歌謡 形態論情報データ
 「仏足石歌」と「歌経標式」引用歌のテキストにUniDicによる短単位の形態論情報を付与し、誤りを修正したものです。
 「仏足石歌」は[Wikipedia「仏足跡歌碑」](https://ja.wikipedia.org/wiki/%E4%BB%8F%E8%B6%B3%E8%B7%A1%E6%AD%8C%E7%A2%91)にあるテキストをもとにしています。
 「歌経標式」引用歌は[Oxford NINJAL Corpus of Old Japanese (ONCOJ)](https://oncoj.ninjal.ac.jp/)の（ローマ字）テキストをひらがなに変換して作成しています。
@@ -26,6 +26,6 @@
 - [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 - テキストデータのライセンスは出典に従ってください。
-- Wikipediaは[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-- ONCOJは[CC BY 4.0] ([Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/)
+  - Wikipediaは[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+  - ONCOJは[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
