@@ -29,9 +29,9 @@
 ## テキスト（XML）データ
 簡易なOpenCHJ-XML形式である[OCX mini 文書定義](https://openchj.github.io/ocx-mini)にあわせて作成したXMLファイルです。万葉仮名の原文を表示するためにルビを利用しました。
 
-- [Bussokusekika_ocx-mini.xml](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/Bussokusekika_ocx-mini.xml)
+- 仏足石歌 [Bussokusekika_ocx-mini.xml](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/Bussokusekika_ocx-mini.xml)
 
-- [kakyo_hyoshiki_ocx-mini.xml](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/kakyo_hyoshiki_ocx-mini.xml)
+- 歌経標式例歌 [KakyoHyoshiki_ocx-mini.xml](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/KakyoHyoshiki_ocx-mini.xml)
 
 このXMLでは、文書全体を `<doc>` 要素で囲み、OCX mini の名前空間 `https://openchj.github.io/ns/ocx` をデフォルト名前空間として指定しています。各歌は和歌一首を表す単位として `<lg type="waka">` で記述し、歌番号は `id` 属性として保持しました。
 
