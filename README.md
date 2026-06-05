@@ -6,7 +6,14 @@
 
 歌経標式の形態論情報の整備にあたっては[沖森卓也ほか（1993）『歌経標式―注釈と研究』桜楓社](https://ndlsearch.ndl.go.jp/books/R100000002-I000002256646) を参考にしました。
 
-## 形態論情報 ファイル形式
+## 形態論情情報
+上代語UniDicを使って形態素解析を行った上で誤りを修正したデータです。[OpenCHJ中納言](https://chunagon.ninjal.ac.jp/open-chj/)のデータソースに相当します。
+
+- 仏足石歌 [Bussokusekika_morph.txt](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/Bussokusekika_morph.txt)
+
+- 歌経標式例歌 [KakyoHyoshiki_morph.txt](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/KakyoHyoshiki_morph.txt)
+
+### ファイル形式
 - UTF-8 (BOMなし) LF改行, タブ区切り
 - フィールド（左から）
   - ファイル名（資料名）
@@ -24,6 +31,7 @@
   - 語種
 
 ### 形態論情報ライセンス
+- 作成者：小木曽智信
 - [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## テキスト（XML）データ
