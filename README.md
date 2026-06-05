@@ -27,7 +27,7 @@
 - [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## テキスト（XML）データ
-[OCX mini 文書定義](https://openchj.github.io/ocx-mini)にあわせて作成したXMLファイルです。万葉仮名の原文を表示するためにルビを利用しました。
+簡易なOpenCHJ-XML形式である[OCX mini 文書定義](https://openchj.github.io/ocx-mini)にあわせて作成したXMLファイルです。万葉仮名の原文を表示するためにルビを利用しました。
 
 - [Bussokusekika_ocx-mini.xml](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/Bussokusekika_ocx-mini.xml)
 
