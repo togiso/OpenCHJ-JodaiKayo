@@ -7,7 +7,7 @@
 歌経標式の形態論情報の整備にあたっては[沖森卓也ほか（1993）『歌経標式―注釈と研究』桜楓社](https://ndlsearch.ndl.go.jp/books/R100000002-I000002256646) を参考にしました。
 
 ## 形態論情情報
-上代語UniDicを使って形態素解析を行った上で誤りを修正したデータです。[OpenCHJ中納言](https://chunagon.ninjal.ac.jp/open-chj/)のデータソースに相当します。
+[上代語UniDic](https://clrd.ninjal.ac.jp/unidic/download_all.html#unidic_jodai)を使って形態素解析を行った上で誤りを修正したデータです。[OpenCHJ中納言](https://chunagon.ninjal.ac.jp/open-chj/)のデータソースに相当します。
 
 - 仏足石歌 [Bussokusekika_morph.txt](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/Bussokusekika_morph.txt)
 
@@ -45,7 +45,7 @@
 
 本文はひらがなにした解析対象のテキストを `<r>` 要素の内容として記述し、万葉仮名の原文を `rt` 属性に記録しています。たとえば `<r rt="阿米">あめ</r>` のように、万葉仮名の原文を振り仮名として、本文文字列から分離して記録しています。
 
-OCX mini で定義されていない要素については、TEI のタグセットを利用しています。具体的には、和歌一首を表す `<lg type="waka">`、句切れを表す `<caesula/>`、判読不能・欠損・空白等を示す `<unclear>` は、TEI の詩歌・翻刻記述の考え方に基づいて用いています。
+OCX mini で定義されていない要素については、TEI のタグセットを利用しています。具体的には、和歌一首を表す `<lg type="waka">`、句切れを表す `<caesura/>`、判読不能・欠損・空白等を示す `<unclear>` は、TEI の詩歌・翻刻記述の考え方に基づいて用いています。
 
 歌中の句切れは `<caesula/>` で示しました。これは和歌内部の韻律的・構造的な切れ目を表すための空要素です。また、判読不能・欠損・空白等を示す箇所は `<unclear>` 要素で示し、元データの内容をそのまま保持しています。
 
