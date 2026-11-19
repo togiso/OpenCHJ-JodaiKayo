@@ -35,41 +35,54 @@
 - [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## テキスト（XML）データ
-簡易なOpenCHJ-XML形式である[OCX mini 文書定義](https://openchj.github.io/ocx-mini)にあわせて作成したXMLファイルです。万葉仮名の原文を表示するためにルビを利用しました。
+OpenCHJ-XML 形式である [OCX Standard](https://openchj.github.io/ocx-standard)（v0.62β）にあわせて作成したXMLファイルです。`ocx:doc` をルート要素とし、その中で TEI の語彙を使う書き方の見本でもあります。万葉仮名の原文を表示するためにルビを利用しました。
 
-- 仏足石歌 [Bussokusekika_ocx-mini.xml](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/Bussokusekika_ocx-mini.xml)
+- 仏足石歌 [Bussokusekika_ocx-standard.xml](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/Bussokusekika_ocx-standard.xml)
 
-- 歌経標式例歌 [KakyoHyoshiki_ocx-mini.xml](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/KakyoHyoshiki_ocx-mini.xml)
+- 歌経標式例歌 [KakyoHyoshiki_ocx-standard.xml](https://github.com/togiso/OpenCHJ-JodaiKayo/blob/main/KakyoHyoshiki_ocx-standard.xml)
 
-このXMLでは、文書全体を `<doc>` 要素で囲み、OCX mini の名前空間 `https://openchj.github.io/ns/ocx` をデフォルト名前空間として指定しています。各歌は和歌一首を表す単位として `<lg type="waka">` で記述し、歌番号は `id` 属性として保持しました。
+このXMLでは、文書全体を `<ocx:doc>` 要素で囲んでいます。OCX の要素には接頭辞 `ocx:`（名前空間 `https://openchj.github.io/ns/ocx`）、TEI の要素には接頭辞 `tei:`（名前空間 `http://www.tei-c.org/ns/1.0`）を付けています。TEI 文書そのものではないため、TEI ヘッダーはありません。
 
-本文はひらがなにした解析対象のテキストを `<r>` 要素の内容として記述し、万葉仮名の原文を `rt` 属性に記録しています。たとえば `<r rt="阿米">あめ</r>` のように、万葉仮名の原文を振り仮名として、本文文字列から分離して記録しています。
+```xml
+<ocx:doc textID="仏足石歌" corpusName="上代歌謡" version="0.62"
+         xmlns:ocx="https://openchj.github.io/ns/ocx"
+         xmlns:tei="http://www.tei-c.org/ns/1.0">
+<tei:lg n="1" type="waka"><ocx:r rt="美">み</ocx:r><ocx:r rt="阿">あ</ocx:r>…<tei:caesura/>…<ocx:eos/></tei:lg>
+…
+</ocx:doc>
+```
 
-OCX mini で定義されていない要素については、TEI のタグセットを利用しています。具体的には、和歌一首を表す `<lg type="waka">`、句切れを表す `<caesura/>`、判読不能・欠損・空白等を示す `<unclear>` は、TEI の詩歌・翻刻記述の考え方に基づいて用いています。
+各歌は和歌一首を表す単位として `<tei:lg type="waka">` で記述し、歌番号は `n` 属性として保持しました。
 
-歌中の句切れは `<caesula/>` で示しました。これは和歌内部の韻律的・構造的な切れ目を表すための空要素です。また、判読不能・欠損・空白等を示す箇所は `<unclear>` 要素で示し、元データの内容をそのまま保持しています。
+本文はひらがなにした解析対象のテキストを `<ocx:r>` 要素の内容として記述し、万葉仮名の原文を `rt` 属性に記録しています。たとえば `<ocx:r rt="阿">あ</ocx:r>` のように、万葉仮名の原文を振り仮名として、本文文字列から分離して記録しています。
 
-各 `<lg type="waka">` の末尾には `<eos/>` を置き、一首ごとの解析上の区切りを明示しました。これにより、OpenCHJ の形態素解析・検索処理において、一首を一つの文相当の単位として扱えるようにしています。
+OCX で定義されていない要素については、TEI のタグセットを利用しています。具体的には、和歌一首を表す `<tei:lg type="waka">`、句切れを表す `<tei:caesura/>`、判読不能・欠損・空白等を示す `<tei:unclear>` です。
+
+歌中の句切れは `<tei:caesura/>` で示しました。これは和歌内部の韻律的・構造的な切れ目を表すための空要素です。また、判読不能・欠損・空白等を示す箇所は `<tei:unclear>` 要素で示し、元データの内容をそのまま保持しています。
+
+各 `<tei:lg type="waka">` の末尾には `<ocx:eos/>` を置き、一首ごとの解析上の区切りを明示しました。これにより、OpenCHJ の形態素解析・検索処理において、一首を一つの文相当の単位として扱えるようにしています。
+
+OCX Standard のスキーマ（[ocx-standard-tei.xsd](https://openchj.github.io/schema/ocx/standard/0.6/ocx-standard-tei.xsd) と [ocx-standard.sch](https://openchj.github.io/schema/ocx/standard/0.6/ocx-standard.sch)）で検証できます。
 
 ## 使用している主なタグ
 
-### OCX mini のタグ
+### OCX のタグ
 
 | 要素・属性 | 用途 |
 |---|---|
-| `<doc>` | OCX mini 文書全体を表すルート要素 |
-| `<r>` | ルビ付き本文文字を表す要素 |
-| `rt` | `<r>` 要素に対応する読み |
-| `<eos/>` | 解析上の文末・一首末を表す境界マーカー |
+| `<ocx:doc>` | 解析対象の本文全体を囲むルート要素 |
+| `<ocx:r>` | ルビ付き本文文字を表す要素 |
+| `rt` | `<ocx:r>` 要素の本文に対応する万葉仮名の原文 |
+| `<ocx:eos/>` | 解析上の文末・一首末を表す境界マーカー |
 
 ### TEI のタグ
 
 | 要素・属性 | 用途 |
 |---|---|
-| `<lg type="waka">` | 歌一首を表す要素 |
-| `id` | 各歌の歌番号 |
-| `<caesula/>` | 歌中の句切れを表す空要素 |
-| `<unclear>` | 判読不能・欠損・空白等の不確実な箇所 |
+| `<tei:lg type="waka">` | 歌一首を表す要素 |
+| `n` | 各歌の歌番号 |
+| `<tei:caesura/>` | 歌中の句切れを表す空要素 |
+| `<tei:unclear>` | 判読不能・欠損・空白等の不確実な箇所 |
 
 
 ### テキストデータライセンス
